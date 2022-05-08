@@ -1,0 +1,19 @@
+<div *ngIf="searchQuery" class="suggestions expand shadow">
+  <ul class="list">
+    <li *ngFor="let result of searchResults; let i = index">
+      <div class="flex space-between">
+        <span title="Result 1" class="suggestion invert pointer">
+          {{ result }}
+        </span>
+        <!-- Append icons -->
+        <div class="flex space-around">
+          <!-- Make staggering like animation for the hearts icon -->
+          <i [ngClass]="i > 0 ? 'delay-' + i + 's' : ''" title="Pin item" class="animated bounceIn material-icons purple pointer invert item">
+            {{ searchQuery ? 'favorite_border' : 'favorite' }}
+          </i>
+          <i title="Reload" class="material-icons purple pointer invert item">update</i>
+        </div>
+      </div>
+    </li>
+   </ul>
+</div>

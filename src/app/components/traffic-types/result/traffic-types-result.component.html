@@ -1,0 +1,4 @@
+<div *ngIf="result.img" class="result-wrapper shadow animated fadeIn" [ngStyle]="{'border-color': result.color}">
+  <h3 class="result-label animated bounceIn purple">Bingo! You just won <em>{{ result.label }}</em>.</h3>
+  <img src="{{ result.img }}" width="400" height="auto" />
+</div>

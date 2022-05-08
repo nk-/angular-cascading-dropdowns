@@ -1,0 +1,12 @@
+<header id="header" class="flex space-between">
+  <img [src]="logoSrc" [alt]="logoAlt" class="logo" />
+  <h1 class="branding" [innerHTML]="title"></h1>
+  <!-- Search widget -->
+  <app-search-types [searchLoader]="true" [searchLabel]="'Search types and models'"></app-search-types>
+</header>
+<div class="container flex space-between align-top">
+  <!-- Cascading dropdown widgets -->
+  <app-traffic-types class="flex-30"></app-traffic-types>
+  <!-- Results based on dropdown selections -->
+  <app-traffic-types-result></app-traffic-types-result>
+</div>

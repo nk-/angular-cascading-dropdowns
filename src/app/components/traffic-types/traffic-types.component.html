@@ -1,0 +1,14 @@
+<!-- The Traffic Meister cascading dropdowns. -->
+<div class="cascading-dropdown-wrapper">
+  <div class="cascading-dropdown-item">
+    <app-form-select [value]="typeValue" id="type" [var]="{type: typeValue}" [label]="typeLabel" [options]="typesOptions"></app-form-select>
+  </div>
+
+  <div *ngIf="typeValue !== 'none'" class="cascading-dropdown-item">
+    <app-form-select [value]="modelValue" id="model" [var]="{type: typeValue}" [label]="modelLabel" [options]="modelOptions"></app-form-select>
+  </div>
+
+  <div *ngIf="typeValue !== 'none' && modelValue !== 'none'" class="cascading-dropdown-item">
+    <app-form-select [value]="colorValue" id="color" [var]="{type: typeValue}" [label]="colorLabel" [options]="colorOptions"></app-form-select>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.cascading-dropdown-wrapper {
+  margin: 2rem auto 1rem auto;
+}
+.cascading-dropdown-item {
+  margin: 1rem 0;
+}
+
+/* Media queries */
+@media only screen and (max-width: 879px) {
+  .cascading-dropdown-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cascading-dropdown-item {
+    width: calc(100% + 3rem);
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,31 @@
+<div class="search-wrapper flex" [ngClass]="{ 'expand': searchWrapperClass }">
+
+  <!-- Define search input, includes custom directive "appSearchInput" -->
+  <input
+    appSearchInput
+    name="search_box"
+    required
+    placeholder="{{ searchLabel }}"
+    type="search"
+    [(ngModel)]="searchInput"
+    (ngModelChange)="onInputModelChange($event)"
+    [ngClass]="{ 'has-value': searchInput, 'empty': !searchInput, 'collapse': searchCollapse }"
+  />
+
+  <!-- Set label here -->
+  <label class="purple floating">{{ searchLabel }}</label>
+
+  <!-- Loader global component -->
+  <app-loader *ngIf="searchLoaderShow" class="flex-20"></app-loader>
+
+  <!-- Define icon, depending on the input value -->
+  <i
+    class="material-icons purple"
+    [ngClass]="{'has-value pointer': searchInput}"
+    (click)="onClick(searchInput)">
+    {{ searchInput ? 'close' : 'search'}}
+  </i>
+</div>
+
+<!-- Search "results" (placeholder, dummy) -->
+<app-search-results [searchQuery]="searchQuery"></app-search-results>

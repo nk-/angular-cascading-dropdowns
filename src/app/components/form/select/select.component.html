@@ -1,0 +1,11 @@
+<label [ngClass]="{'float': value !== 'none'}" class="purple floating-label-select">{{ label }}</label>
+<div class="flex space-around">
+  <select (change)="onChange(value)" [(ngModel)]="value" class="pointer w-full">
+    <option value="none">{{ label }}</option>
+    <option *ngFor="let item of options | keyvalue" [value]="item.key">
+      {{ item.value }}
+    </option>
+  </select>
+  <i *ngIf="value === 'none'" class="select-toggle select-toggle-default material-icons pointer purple">arrow_drop_down</i>
+  <i *ngIf="value !== 'none'" (click)="onChange('none')" class="select-toggle select-toggle-close material-icons pointer purple animated fadeIn">close</i>
+</div>
